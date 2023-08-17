@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonJs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts"
+    "start": "nodemon index.ts",
+    "prod": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "",

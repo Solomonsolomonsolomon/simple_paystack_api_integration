@@ -26,6 +26,7 @@ app.post("/paystack/pay", async (req: Request, res: Response) => {
       email,
       amount: amount * 100,
     });
+    
     await paystack
       .initializetransaction(res, body)
       .then(({ data }: any) => {
@@ -37,9 +38,9 @@ app.post("/paystack/pay", async (req: Request, res: Response) => {
       })
       .catch((err) => {
         throw err;
-      });
+      });   
   } catch (error: any) {
-    return res.status(400).json({ message: error.message });
+    return res.status(400).json({ message: error.message, error });
   }
 });
 //# verify payment
